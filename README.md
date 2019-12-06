@@ -34,7 +34,7 @@ It is possible to modify the selection option through the properties panel (Sele
 Processing time depends on the number of unique values.
 
 For more information about Scrambling method :
-https://help.qlik.com/en-US/sense-developer/June2018/apis/EngineAPI/services-Doc-Scramble.html
+https://help.qlik.com/en-US/sense-developer/November2019/APIs/EngineAPI/services-Doc-Scramble.html
 
 Some properties are retained to help debugging. For example, special characters are not changed, and small numbers are scrambled to another small number.
 
