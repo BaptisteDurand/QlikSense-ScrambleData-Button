@@ -30,8 +30,9 @@ How can I use it?
 Specify which fields you want to scramble by selecting them in $Field technical field (it contains all fields of the app).
 It is possible to modify the selection option through the properties panel (Selected, Excluded, Possible values, etc).
 
-## Warning :
-Processing time depend of the number of unique values.
+## Information :
+Processing time depends on the number of unique values.
+
 For more information about Scrambling method :
 https://help.qlik.com/en-US/sense-developer/June2018/apis/EngineAPI/services-Doc-Scramble.html
 
