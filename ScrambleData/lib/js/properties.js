@@ -22,9 +22,9 @@ define([], function () {
                             type :"items",
                             label: "Variables Settings",
                             items:{
-								buttonSetName:{
-									ref: 		"buttonSetName",
-									label:  	"Button name",
+								newAppName:{
+									ref: 		"newAppName",
+									label:  	"New App name",
 									type: 		"string"
 								},
 								selectionToGet: {
