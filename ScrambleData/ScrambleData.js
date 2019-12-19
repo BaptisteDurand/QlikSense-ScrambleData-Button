@@ -25,22 +25,39 @@ function ( $, qlik, common, actions, properties) {
 			// Get Current Engines Session
 			let qix = this.backendApi.model;
 
-			let $buttonName = ' (Apple Pie) Scramble';
-			if(layout.buttonSetName){$buttonName = layout.buttonSetName};
+			let $buttonNameScrambling = 'Scramble Data';
+			//if(layout.buttonSetName){$buttonNameScrambling = layout.buttonSetName};
 			let $buttonClass = 'lui-button';
 			if(layout.colorForButton){$buttonClass = layout.colorForButton};
+			let $buttonNameSave = 'Save a copy of the app';
 
-			//Create Button
-			let $buttonSubmit = createElement('button', $buttonClass, '' , $buttonName);
+			//New App Name
+			let $NewAppName = 'New Scrambled App';
+			if(layout.newAppName){$NewAppName = layout.newAppName};
+
+			//Description Text			
+			let buttonScrambleDescription = 'Scramble Data of choosen fields ($Field Selector)';
+			let buttonSaveDescription = 'Ok with Scrambling? Save a copy of the app (New Name : '+$NewAppName+')';
+			
+			//Create Buttons
+			let $buttonSubmit = createElement('button', $buttonClass, '' , $buttonNameScrambling);
+			let $buttonSave = createElement('button', $buttonClass, '' , $buttonNameSave);
+
+			//Buttons Explanations
+			let $buttonScrambleDescription = createElement('div','lui-text-default','margin : 5px 5px 5px 5px',buttonScrambleDescription);
+			let $buttonSaveDescription = createElement('div','lui-text-default','margin : 5px 5px 5px 5px',buttonSaveDescription);
 
 			//System Field : $Fields contains the list of app fields.
 			let fieldsSource = '$Field';
-			let fieldToScramble = app.field(fieldsSource).getData();
+			onSubmitScrambling($buttonSubmit, app, fieldsSource, qix, layout.selectionToGet);
+			onSubmitSave($buttonSave, app, $NewAppName);
 
-			onSubmit($buttonSubmit, fieldToScramble, qix, layout.selectionToGet);
 			// Create Container
 			let $buttonContainer = createElement('div');
-			$buttonContainer.appendChild($buttonSubmit);	
+			$buttonContainer.appendChild($buttonScrambleDescription);
+			$buttonContainer.appendChild($buttonSubmit);
+			$buttonContainer.appendChild($buttonSaveDescription);
+			$buttonContainer.appendChild($buttonSave);	
 			
 			//display container
 			$element.append($buttonContainer);
