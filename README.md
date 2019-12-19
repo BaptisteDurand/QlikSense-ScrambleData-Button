@@ -1,3 +1,7 @@
+# WARNING
+
+Opened Bug : Changes are not saved in QS for Windows. Work with Desktop.
+
 # QlikSense-ScrambleData-Button
 
 Scramble the data of many fields, directly in the app by a button.
