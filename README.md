@@ -1,6 +1,6 @@
 # WARNING
 
-Opened Bug : Changes are not saved in QS Enterprise for Windows. Work with Desktop.
+Opened Bug : Changes are not saved in QS Enterprise for Windows. Works with Desktop.
 
 # QlikSense-ScrambleData-Button
 
