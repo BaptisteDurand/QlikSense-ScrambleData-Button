@@ -50,7 +50,7 @@ function ( $, qlik, common, actions, properties) {
 			//System Field : $Fields contains the list of app fields.
 			let fieldsSource = '$Field';
 			onSubmitScrambling($buttonSubmit, app, fieldsSource, qix, layout.selectionToGet);
-			onSubmitSave($buttonSave, app, $NewAppName);
+			onSubmitSave($buttonSave, app, $NewAppName, qix, qlik);
 
 			// Create Container
 			let $buttonContainer = createElement('div');

@@ -32,13 +32,22 @@ function onSubmitScrambling(element, app, fieldsSource, qix, selectionToGet) {
  * @param {*} element 
  * @param {*} app 
  */
-function onSubmitSave(element, app, newAppName) {
+function onSubmitSave(element, app, newAppName, qix, qlik) {
     element.onclick = function(){
         // let arrayValues  = [];
         //qix.save();
-        app.doSave(newAppName).then(function(){
-   			 console.log('App Saved');
-		});
-    
+        /*app.doSave(newAppName).then(function(){
+   			 console.log('App Saved');*/
+	
+		
+			qix.enigmaModel.app.global.createApp(newAppName).then(function(reply)			{
+			let targetApp=reply.qAppId;
+			console.log("target ", targetApp);
+			let sourceApp= app.id;
+			console.log("source ", sourceApp);
+			qix.enigmaModel.app.global.copyApp(targetApp, sourceApp, []).then(function(reply3){
+			console.log ("copied ", reply3);
+			});
+    	});
     }
 }
